@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    body{
+        background-color:black;
+    }
+    .box{
+        position:relative;
+        width:800px;
+        height:500px;
+        margin:200px auto;
+        
+    }
+    .wrap {
+        width:500px;
+        height:100px;
+        margin:100px  auto;
+    }
+    .wrap  p{
+        position:relative;
+        width:100%;
+        height:100%;
+        color:white;
+        font-size:80px;
+        font-weight:bold;
+        letter-spacing:3px;
+        text-indent: 20px;
+        
+    }
+    .wrap  p:before,.wrap  p:after{
+        position:absolute;
+        top:-16px;
+        left:-220px;
+        content:"";
+        width:154%;
+        height:164%;
+        border:10px solid red;
+        border-radius:8px;
+        animation:8s rotate ease-in-out infinite alternate;
+       
+    }
+    .wrap p:before{
+        border-color:transparent red  red  red;
+        z-index:-1;
+    }
+    .wrap p:after{
+        border-color:red transparent  transparent  transparent;
+        z-index:1;
+    }
+
+    @keyframes rotate{
+        0%{transform:rotateZ(0deg); }
+        50%{transform:rotateZ(360deg); }
+       
+    }
+    .love{
+        position:absolute;
+        top:-19%;
+        left:3%;
+        width:300px;
+        margin:150px auto;
+        font-size:0px;
+        transform:rotate(-10deg);
+        animation: move 1s infinite alternate;
+        
+    }
+    @keyframes move{
+        100%{transform:scale(1.6)}
+    }
+    .love span{
+        display:inline-block;
+        width:55px;
+        height:100px;
+        background-color:red;
+        border-radius:100px 100px 0 0;
+        box-shadow:0 0 40px red;
+        animation: shadow 1s infinite alternate;
+    }
+    @keyframes shadow{
+        100%{box-shadow:0 0 150px red}
+    }
+    .love .left{
+        transform:rotate(45deg) translateY(-62px);
+    }
+    .love .right{
+        transform:rotate(-45deg) translateY(-61px);
+    }
+
+</style>
+<body>
+    <div class="box">
+        <div class="wrap">
+            <p>I Love You</p>
+        </div>
+        <div class="love">
+            <span class="left"></span>
+            <span class="right"></span>
+        </div>
+    </div>
+    
+</body>
+</html>
